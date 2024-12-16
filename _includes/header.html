@@ -1,6 +1,13 @@
 <header>
   <a class="site-title" href="{{site.baseurl}}/">{{site.title}}</a>
-    <a href="https://sxi.com.tr/">Blog</a>
+    const headings = document.querySelectorAll('h2[id],h3[id]'); // 1
+const linkContent = '🔗'; // 2
+for (const heading of headings) { // 3
+    const linkIcon = document.createElement('a'); // 4
+    linkIcon.setAttribute('href', `#${heading.id}`); // 5
+    linkIcon.innerHTML = linkContent; // 6
+    heading.appendChild(linkIcon); // 7
+}
   <!-- dark/light mode -->
   <span id="dark-mode-toggle" style="cursor: pointer">
     <svg
